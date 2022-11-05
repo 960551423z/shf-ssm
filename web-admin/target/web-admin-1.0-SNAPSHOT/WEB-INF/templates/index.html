@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <tr th:each="item,it : ${list}" >
+        <td class="text-center" th:text="${it.count}"></td>
+        <td th:text="${item.roleName}"></td>
+        <td th:text="${item.roleCode}"></td>
+        <td th:text="${item.description}"></td>
+    <td th:text="${#dates.format(item.createTime,'yyyy-MM-dd HH:mm:ss')}" ></td>
+    </tr>
+</body>
+</html>
