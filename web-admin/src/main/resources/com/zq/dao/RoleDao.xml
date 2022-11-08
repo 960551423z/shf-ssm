@@ -64,8 +64,8 @@
         <include refid="columns"></include>
         from acl_role
         <where>
-            <if test="role.roleName != null and role.roleName !=''">
-                role_name like "%"#{role.roleName}"%" and
+            <if test="t.roleName != null and t.roleName !=''">
+                role_name like "%"#{t.roleName}"%" and
             </if>
             is_deleted = 0
         </where>

@@ -10,16 +10,16 @@ import java.util.List;
  * @Date: 2022/11/3 20:39
  * @Description: TODO
  */
-public interface RoleService {
+public interface RoleService extends BaseService<Role> {
     List<Role> findAll();
-
-    Integer insert(Role role);
-
-    void delete(Integer id);
-
-    Role getById(Integer id);
-
-    Integer update(Role role);
-
-    PageInfo<Role> findByPageAndLike(Integer pageNum,Integer pageSize,Role role);
+//
+//    Integer insert(Role role);
+//
+//    void delete(Integer id);
+//
+//    Role getById(Integer id);
+//
+//    Integer update(Role role);
+//
+//    PageInfo<Role> findByPageAndLike(Integer pageNum,Integer pageSize,Role role);
 }

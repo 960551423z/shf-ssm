@@ -1,6 +1,6 @@
 package com.zq.util;
 
-import com.github.pagehelper.StringUtil;
+import com.github.pagehelper.util.StringUtil;
 
 /**
  * 转型操作工具类

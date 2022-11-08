@@ -41,7 +41,7 @@ public class RoleController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         roleService.delete(id);
-        return "redirect:/role";
+        return "redirect:/role/1";
     }
 
     // 修改：先查询，再回显，再更新

@@ -24,7 +24,8 @@
     </mvc:annotation-driven>
 
     <!--配置静态资源-->
-    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+    <mvc:default-servlet-handler/>
+
 
     <!-- Spring 和 Thymeleaf 试图解析器   -->
     <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">

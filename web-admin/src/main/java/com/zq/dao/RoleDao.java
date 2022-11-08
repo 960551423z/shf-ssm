@@ -12,21 +12,9 @@ import java.util.List;
  * @Description: TODO
  */
 
-public interface RoleDao {
+public interface RoleDao extends BaseDao<Role> {
     // 查询所有角色
     List<Role> findAll();
 
-    // 添加角色
-    Integer insert(Role role);
 
-    // 删除角色（本质将is_deleted设置为1）
-    void delete(Integer id);
-
-    Role getById(Integer id);
-
-    // 更新
-    Integer update(Role role);
-
-    // 分页查询，条件查询
-    List<Role> findByPageAndLike(Integer pageNum,Integer pageSize,@Param("role") Role role);
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="row" th:fragment="pagination">
+    <input type="hidden" name="pageSize" id="pageSize" th:value="${page.pageSize}"/>
+    <input type="hidden" name="pageNum" id="pageNum" th:value="${page.pageNum}"/>
+    <div class="col-sm-6">
+        <div class="dataTables_info" id="DataTables_Table_0_info" role="alert" aria-live="polite" aria-relevant="all">
+            当前第<span th:text="${page.pageNum}"></span>页/共<span th:text="${page.pages }"></span>页&nbsp;&nbsp;共<span
+                id="pageTotal" th:text="${page.total}"></span>条记录&nbsp;&nbsp;
+        </div>
+    </div>
+
+    <div class="col-sm-6" th:with='path=${#httpServletRequest.getRequestURI().split("/")[1]}'>
+        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+            <ul class="pagination">
+
+                <li class="paginate_button previous" th:if="${!page.isFirstPage}">
+                    <a th:href="@{|/${path}/1|}">首页</a>
+
+                    <!--既有常量又有变量，使用 ||-->
+                    <a th:href="@{|/${path}/${page.prePage}|}">上一页</a>
+                </li>
+
+                <li th:each="i : ${page.navigatepageNums}"
+                    th:class="${i == page.pageNum } ? 'paginate_button active' : 'paginate_button'">
+                    <a th:href="@{|/${path}/${i}|}" th:text="${i}">
+                        <span th:text="${i}"></span>
+                    </a>
+                </li>
+
+                <li class="paginate_button next" th:if="${!page.isLastPage}">
+                    <a th:href="@{|/${path}/${page.nextPage}|}">下一页</a>
+                    <a th:href="@{|/${path}/${page.pages}|}">末页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

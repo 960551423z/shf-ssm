@@ -1,5 +1,8 @@
-com\zq\result\ResultCodeEnum.class
 com\zq\util\MD5.class
-com\zq\util\CastUtil.class
+com\zq\dao\BaseDao.class
+com\zq\service\BaseService.class
 com\zq\util\WebUtil.class
 com\zq\result\Result.class
+com\zq\result\ResultCodeEnum.class
+com\zq\service\impl\BaseServiceImpl.class
+com\zq\util\CastUtil.class

@@ -1,12 +1,18 @@
 package com.zq.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class BaseEntity implements Serializable {
 
     private Long id;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updateTime;
     private Integer isDeleted;
 
