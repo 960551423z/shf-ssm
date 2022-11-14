@@ -8,7 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-utils" />
         <module name="model" />
+        <module name="service-api" />
         <module name="web-admin" />
+        <module name="service-house" />
+        <module name="service-acl" />
       </profile>
     </annotationProcessing>
   </component>

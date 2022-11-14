@@ -4,9 +4,12 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zq.dao.BaseDao;
 import com.zq.service.BaseService;
+import com.zq.util.CastUtil;
+
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: 阿庆
@@ -39,12 +42,15 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
     }
 
     @Override
-    public PageInfo<T> findByPageAndLike(Integer pageNum, Integer pageSize, T t) {
-        // 开启分页查询
-        PageHelper.startPage(pageNum,pageSize);
+    public PageInfo<T> findByPageAndLike(Map<String, Object> filters) {
+        //当前页数
+        int pageNum = CastUtil.castInt(filters.get("pageNum"), 1);
 
-       List<T> list = getEntityDao().findByPageAndLike(pageNum, pageSize, t);
+        //每页显示的记录条数
+        int pageSize = CastUtil.castInt(filters.get("pageSize"), 3);
 
-        return new PageInfo<>(list);
+        PageHelper.startPage(pageNum, pageSize);
+
+        return new PageInfo<T>(getEntityDao().findByPageAndLike(filters), 5);
     }
 }

@@ -1,0 +1,8 @@
+com\zq\service\HouseImageService.class
+com\zq\service\HouseUserService.class
+com\zq\service\RoleService.class
+com\zq\service\HouseBrokerService.class
+com\zq\service\DictService.class
+com\zq\service\HouseService.class
+com\zq\service\CommunityService.class
+com\zq\service\AdminService.class

@@ -1,10 +1,13 @@
 package com.zq.dao;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
 
 import javax.management.relation.Role;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: 阿庆
@@ -42,12 +45,8 @@ public interface BaseDao<T> {
     Integer update(T t);
 
     // 分页查询，条件查询
-    List<T> findByPageAndLike(Serializable pageNum, Serializable pageSize, @Param("t") T t);
+//    List<T> findByPageAndLike(Serializable pageNum, Serializable pageSize, @Param("t") T t);
 
+    Page<T> findByPageAndLike(Map<String, Object> filters);
 
-
-
-
-
-//    Page<T> findPage(Map<String, Object> filters);
 }

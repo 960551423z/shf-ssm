@@ -1,0 +1,8 @@
+com\zq\controller\HouseUserController.class
+com\zq\controller\IndexController.class
+com\zq\controller\RoleController.class
+com\zq\controller\AdminController.class
+com\zq\controller\CommunityController.class
+com\zq\controller\HouseBrokerController.class
+com\zq\controller\HouseController.class
+com\zq\controller\DictController.class
